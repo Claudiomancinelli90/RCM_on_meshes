@@ -1,0 +1,731 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		2FB0B886580946A69FE293FE /* ZERO_CHECK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 36291B3A1C4C42EDBE0CBFF9 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */;
+			buildPhases = (
+				336A586391584CF99D829DFC /* CMake Rules */,
+			);
+			dependencies = (
+			);
+			name = ZERO_CHECK;
+			productName = ZERO_CHECK;
+		};
+		BEC1A3412C564C47981EB285 /* ALL_BUILD */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 2099681B0FAC4E7E9C552B68 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildPhases = (
+				73187E4FAB4A4940B24810EA /* CMake Rules */,
+			);
+			dependencies = (
+				7B5696C7994E4915A7623E43 /* PBXTargetDependency */,
+				11B1652ADD914278B29324BA /* PBXTargetDependency */,
+			);
+			name = ALL_BUILD;
+			productName = ALL_BUILD;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		0B1E050FC8964A64A08321F8 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3native.h */ = {isa = PBXBuildFile; fileRef = 7F3F020A5F0D417D932D7DFC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3native.h */; };
+		1BDD60B7F5314658893D1636 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.c */ = {isa = PBXBuildFile; fileRef = 1B30EA861BC64828BC4549C4 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.c */; };
+		2628FB409DA2436BA400503A /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.h */ = {isa = PBXBuildFile; fileRef = B1EA109CD852455A9E22B229 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.h */; };
+		29B1419FE5C44E3983F2CADE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.c */ = {isa = PBXBuildFile; fileRef = AE591BFA21034C6283AB3F43 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.c */; };
+		2F12F732C9474CA19644D48D /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.m */ = {isa = PBXBuildFile; fileRef = FCCEA49D2B4E4BDD9A581390 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.m */; };
+		42B06DB6A243409888ABC199 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/context.c */ = {isa = PBXBuildFile; fileRef = D91FCFBAFD714599ADD652A7 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/context.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		44625C9A0EA84FA4A363DDC8 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/init.c */ = {isa = PBXBuildFile; fileRef = 79C137722F59452D9B627DC5 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/init.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		47315DAD119E446989DB47B9 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.h */ = {isa = PBXBuildFile; fileRef = 8E3CA528776A42CF81553343 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.h */; };
+		54C3A8A62B174072B8B1B0B6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/input.c */ = {isa = PBXBuildFile; fileRef = C6602A4BE59249C8A90B3BCB /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/input.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		5892B91A3D2F40CF8E8FF200 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/vulkan.c */ = {isa = PBXBuildFile; fileRef = 3D5A4E09CEE94C37B5551643 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/vulkan.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		6327714B76D24EFE9CCAF2C6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.m */ = {isa = PBXBuildFile; fileRef = 14C8C9AC38B5462CB3D599AD /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.m */; };
+		67C3E829F32B4CCB934BB014 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_init.m */ = {isa = PBXBuildFile; fileRef = 639DC792EB8A41A485E6DE9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_init.m */; };
+		7B35492DECC3486DAFBEE69D /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3.h */ = {isa = PBXBuildFile; fileRef = 3782F76D89A24275AFFD7CDE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3.h */; };
+		86FF2BAD5960401D9F106805 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_time.c */ = {isa = PBXBuildFile; fileRef = 5524383E16B84EBBAA59A126 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_time.c */; };
+		8A7B331968F74499B20DFB02 /* /Users/Dala/Documents/bezier/libs/realtime/glfw/src/glfw_config.h */ = {isa = PBXBuildFile; fileRef = 2052C1F692CA48C1BAFB2A20 /* /Users/Dala/Documents/bezier/libs/realtime/glfw/src/glfw_config.h */; };
+		9291A499F2DA423184DFE010 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/CMakeLists.txt */ = {isa = PBXBuildFile; fileRef = 08C64613B8C040C085BEBC9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/CMakeLists.txt */; };
+		937354B79D0741DA9AEA5A4B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/internal.h */ = {isa = PBXBuildFile; fileRef = 23544CA03E844EDD957848D6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/internal.h */; };
+		94EFA728E5B9436AADE00F6F /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/mappings.h */ = {isa = PBXBuildFile; fileRef = CE8AAA161D2C46AD85D16371 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/mappings.h */; };
+		95136603150949398C72469B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.c */ = {isa = PBXBuildFile; fileRef = 64300D00BB8E4B788F32AB90 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.c */; };
+		A15167D18A0D4C149C4813CC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.h */ = {isa = PBXBuildFile; fileRef = FEDB64B8D8604D9FA4A9E23B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.h */; };
+		A82BB63C097842128F4E8CCE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/monitor.c */ = {isa = PBXBuildFile; fileRef = D19985BE332F446CA1CAB5FC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/monitor.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+		BBE92B920D8E4C3BA8680C38 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.h */ = {isa = PBXBuildFile; fileRef = 39F192B208E94A69969887C6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.h */; };
+		CFF036F8489F44ED8C91E091 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_platform.h */ = {isa = PBXBuildFile; fileRef = 30F844D3FC8F4CAFA7385CF3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_platform.h */; };
+		D418ADD2BFD24558B6AD7254 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.h */ = {isa = PBXBuildFile; fileRef = 689906DDD28644468EAF8B92 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.h */; };
+		DEB9EF2D20ED40AFB90D8A30 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_monitor.m */ = {isa = PBXBuildFile; fileRef = 25352A97AD744F99847AD07B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_monitor.m */; };
+		E0EB20E218284D5A8E4156D6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_window.m */ = {isa = PBXBuildFile; fileRef = C61A2B785E0049008D2A4115 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_window.m */; };
+		E67E95CB15F0455CAF6F6032 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/window.c */ = {isa = PBXBuildFile; fileRef = 0DD0092733B748A9A32FFDD3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/window.c */; settings = {COMPILER_FLAGS = "-Wdeclaration-after-statement"; }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXBuildStyle section */
+		4E92AED22BA54379B1597B75 /* Release */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Release;
+		};
+		8220F42ED3A741ACB237DCAA /* MinSizeRel */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = MinSizeRel;
+		};
+		87F131FA62AF42FDABDC5D86 /* RelWithDebInfo */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = RelWithDebInfo;
+		};
+		92FCF9A000224222BF960AFE /* Debug */ = {
+			isa = PBXBuildStyle;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+			};
+			name = Debug;
+		};
+/* End PBXBuildStyle section */
+
+/* Begin PBXContainerItemProxy section */
+		227355AAD9BC490E8F1072C3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA9CF2C0AE4142ADB72C6B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F8D1D68D4D4543E48DC1F388;
+			remoteInfo = glfw;
+		};
+		837C0648394C4172823F0CD2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA9CF2C0AE4142ADB72C6B9B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FB0B886580946A69FE293FE;
+			remoteInfo = ZERO_CHECK;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08C64613B8C040C085BEBC9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = src/CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		0DD0092733B748A9A32FFDD3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/window.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = window.c; path = src/window.c; sourceTree = SOURCE_ROOT; };
+		14C8C9AC38B5462CB3D599AD /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = nsgl_context.m; path = src/nsgl_context.m; sourceTree = SOURCE_ROOT; };
+		1B30EA861BC64828BC4549C4 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = osmesa_context.c; path = src/osmesa_context.c; sourceTree = SOURCE_ROOT; };
+		2052C1F692CA48C1BAFB2A20 /* /Users/Dala/Documents/bezier/libs/realtime/glfw/src/glfw_config.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw_config.h; path = ../../glfw/src/glfw_config.h; sourceTree = SOURCE_ROOT; };
+		23544CA03E844EDD957848D6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/internal.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = internal.h; path = src/internal.h; sourceTree = SOURCE_ROOT; };
+		25352A97AD744F99847AD07B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_monitor.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_monitor.m; path = src/cocoa_monitor.m; sourceTree = SOURCE_ROOT; };
+		30F844D3FC8F4CAFA7385CF3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_platform.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_platform.h; path = src/cocoa_platform.h; sourceTree = SOURCE_ROOT; };
+		3782F76D89A24275AFFD7CDE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3.h; path = include/GLFW/glfw3.h; sourceTree = SOURCE_ROOT; };
+		39F192B208E94A69969887C6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = osmesa_context.h; path = src/osmesa_context.h; sourceTree = SOURCE_ROOT; };
+		3D5A4E09CEE94C37B5551643 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/vulkan.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = vulkan.c; path = src/vulkan.c; sourceTree = SOURCE_ROOT; };
+		48458A95CBB5404DB8BADB59 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/CMakeLists.txt */ = {isa = PBXFileReference; explicitFileType = sourcecode.text; fileEncoding = 4; name = CMakeLists.txt; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5524383E16B84EBBAA59A126 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_time.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = cocoa_time.c; path = src/cocoa_time.c; sourceTree = SOURCE_ROOT; };
+		639DC792EB8A41A485E6DE9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_init.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_init.m; path = src/cocoa_init.m; sourceTree = SOURCE_ROOT; };
+		64300D00BB8E4B788F32AB90 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = egl_context.c; path = src/egl_context.c; sourceTree = SOURCE_ROOT; };
+		689906DDD28644468EAF8B92 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = cocoa_joystick.h; path = src/cocoa_joystick.h; sourceTree = SOURCE_ROOT; };
+		74EEF4E8D7BB440AAF088084 /* glfw */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libglfw3.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		79C137722F59452D9B627DC5 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/init.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = init.c; path = src/init.c; sourceTree = SOURCE_ROOT; };
+		7F3F020A5F0D417D932D7DFC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3native.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = glfw3native.h; path = include/GLFW/glfw3native.h; sourceTree = SOURCE_ROOT; };
+		8E3CA528776A42CF81553343 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = posix_thread.h; path = src/posix_thread.h; sourceTree = SOURCE_ROOT; };
+		AE591BFA21034C6283AB3F43 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = posix_thread.c; path = src/posix_thread.c; sourceTree = SOURCE_ROOT; };
+		B1EA109CD852455A9E22B229 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = egl_context.h; path = src/egl_context.h; sourceTree = SOURCE_ROOT; };
+		C61A2B785E0049008D2A4115 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_window.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_window.m; path = src/cocoa_window.m; sourceTree = SOURCE_ROOT; };
+		C6602A4BE59249C8A90B3BCB /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/input.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = input.c; path = src/input.c; sourceTree = SOURCE_ROOT; };
+		CE8AAA161D2C46AD85D16371 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/mappings.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = mappings.h; path = src/mappings.h; sourceTree = SOURCE_ROOT; };
+		D19985BE332F446CA1CAB5FC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/monitor.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = monitor.c; path = src/monitor.c; sourceTree = SOURCE_ROOT; };
+		D91FCFBAFD714599ADD652A7 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/context.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = context.c; path = src/context.c; sourceTree = SOURCE_ROOT; };
+		FCCEA49D2B4E4BDD9A581390 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; name = cocoa_joystick.m; path = src/cocoa_joystick.m; sourceTree = SOURCE_ROOT; };
+		FEDB64B8D8604D9FA4A9E23B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = nsgl_context.h; path = src/nsgl_context.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		1D8C0A48BA8F43879834E9E1 /* Source Files */ = {
+			isa = PBXGroup;
+			children = (
+				639DC792EB8A41A485E6DE9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_init.m */,
+				FCCEA49D2B4E4BDD9A581390 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.m */,
+				25352A97AD744F99847AD07B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_monitor.m */,
+				5524383E16B84EBBAA59A126 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_time.c */,
+				C61A2B785E0049008D2A4115 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_window.m */,
+				D91FCFBAFD714599ADD652A7 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/context.c */,
+				64300D00BB8E4B788F32AB90 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.c */,
+				79C137722F59452D9B627DC5 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/init.c */,
+				C6602A4BE59249C8A90B3BCB /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/input.c */,
+				D19985BE332F446CA1CAB5FC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/monitor.c */,
+				14C8C9AC38B5462CB3D599AD /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.m */,
+				1B30EA861BC64828BC4549C4 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.c */,
+				AE591BFA21034C6283AB3F43 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.c */,
+				3D5A4E09CEE94C37B5551643 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/vulkan.c */,
+				0DD0092733B748A9A32FFDD3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/window.c */,
+			);
+			name = "Source Files";
+			sourceTree = "<group>";
+		};
+		4C4C82419EDE4EB4BEDA2434 = {
+			isa = PBXGroup;
+			children = (
+				B563AF4757C741DBB7A39A6C /* ALL_BUILD */,
+				9916D2C8F71C47809A8D98C2 /* GLFW3 */,
+				E0F17A43B04F493D80EFEB15 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7B8126A88218428EBA42381E /* glfw */ = {
+			isa = PBXGroup;
+			children = (
+				1D8C0A48BA8F43879834E9E1 /* Source Files */,
+				E3E03959169245F6B9E8CC9E /* Header Files */,
+				08C64613B8C040C085BEBC9C /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/CMakeLists.txt */,
+			);
+			name = glfw;
+			sourceTree = "<group>";
+		};
+		9916D2C8F71C47809A8D98C2 /* GLFW3 */ = {
+			isa = PBXGroup;
+			children = (
+				7B8126A88218428EBA42381E /* glfw */,
+			);
+			name = GLFW3;
+			sourceTree = "<group>";
+		};
+		B10F460CE82E49BB854146A2 /* CMake Rules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "CMake Rules";
+			sourceTree = "<group>";
+		};
+		B563AF4757C741DBB7A39A6C /* ALL_BUILD */ = {
+			isa = PBXGroup;
+			children = (
+				B10F460CE82E49BB854146A2 /* CMake Rules */,
+				48458A95CBB5404DB8BADB59 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/CMakeLists.txt */,
+			);
+			name = ALL_BUILD;
+			sourceTree = "<group>";
+		};
+		E0F17A43B04F493D80EFEB15 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				74EEF4E8D7BB440AAF088084 /* glfw */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3E03959169245F6B9E8CC9E /* Header Files */ = {
+			isa = PBXGroup;
+			children = (
+				3782F76D89A24275AFFD7CDE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3.h */,
+				7F3F020A5F0D417D932D7DFC /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include/GLFW/glfw3native.h */,
+				689906DDD28644468EAF8B92 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.h */,
+				30F844D3FC8F4CAFA7385CF3 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_platform.h */,
+				B1EA109CD852455A9E22B229 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.h */,
+				23544CA03E844EDD957848D6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/internal.h */,
+				CE8AAA161D2C46AD85D16371 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/mappings.h */,
+				FEDB64B8D8604D9FA4A9E23B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.h */,
+				39F192B208E94A69969887C6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.h */,
+				8E3CA528776A42CF81553343 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.h */,
+				2052C1F692CA48C1BAFB2A20 /* /Users/Dala/Documents/bezier/libs/realtime/glfw/src/glfw_config.h */,
+			);
+			name = "Header Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F8D1D68D4D4543E48DC1F388 /* glfw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E351DBD52C994395885789B4 /* Build configuration list for PBXNativeTarget "glfw" */;
+			buildPhases = (
+				B012EC5754314604A7BCCF86 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = glfw;
+			productName = glfw;
+			productReference = 74EEF4E8D7BB440AAF088084 /* glfw */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA9CF2C0AE4142ADB72C6B9B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1150;
+			};
+			buildConfigurationList = FA7A0C6E17A84E169AB2CBFE /* Build configuration list for PBXProject "GLFW" */;
+			buildSettings = {
+			};
+			buildStyles = (
+				92FCF9A000224222BF960AFE /* Debug */,
+				4E92AED22BA54379B1597B75 /* Release */,
+				8220F42ED3A741ACB237DCAA /* MinSizeRel */,
+				87F131FA62AF42FDABDC5D86 /* RelWithDebInfo */,
+			);
+			compatibilityVersion = "Xcode 3.2";
+			hasScannedForEncodings = 0;
+			mainGroup = 4C4C82419EDE4EB4BEDA2434;
+			projectDirPath = ../ext/glfw;
+			projectRoot = "";
+			targets = (
+				BEC1A3412C564C47981EB285 /* ALL_BUILD */,
+				2FB0B886580946A69FE293FE /* ZERO_CHECK */,
+				F8D1D68D4D4543E48DC1F388 /* glfw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0E0C190FC27F4B289B6CB04F = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		336A586391584CF99D829DFC /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Dala/Documents/bezier/libs/realtime/glfw -f /Users/Dala/Documents/bezier/libs/realtime/glfw/CMakeScripts/ZERO_CHECK_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+		4E386188CB504077A3B55237 = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# shell script goes here
+exit 0";
+			showEnvVarsInLog = 0;
+		};
+		73187E4FAB4A4940B24810EA /* CMake Rules */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			name = "CMake Rules";
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "make -C /Users/Dala/Documents/bezier/libs/realtime/glfw -f /Users/Dala/Documents/bezier/libs/realtime/glfw/CMakeScripts/ALL_BUILD_cmakeRulesBuildPhase.make$CONFIGURATION OBJDIR=$(basename \"$OBJECT_FILE_DIR_normal\") all";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B012EC5754314604A7BCCF86 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				67C3E829F32B4CCB934BB014 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_init.m */,
+				2F12F732C9474CA19644D48D /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_joystick.m */,
+				DEB9EF2D20ED40AFB90D8A30 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_monitor.m */,
+				86FF2BAD5960401D9F106805 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_time.c */,
+				E0EB20E218284D5A8E4156D6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/cocoa_window.m */,
+				42B06DB6A243409888ABC199 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/context.c */,
+				95136603150949398C72469B /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/egl_context.c */,
+				44625C9A0EA84FA4A363DDC8 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/init.c */,
+				54C3A8A62B174072B8B1B0B6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/input.c */,
+				A82BB63C097842128F4E8CCE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/monitor.c */,
+				6327714B76D24EFE9CCAF2C6 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/nsgl_context.m */,
+				1BDD60B7F5314658893D1636 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/osmesa_context.c */,
+				29B1419FE5C44E3983F2CADE /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/posix_thread.c */,
+				5892B91A3D2F40CF8E8FF200 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/vulkan.c */,
+				E67E95CB15F0455CAF6F6032 /* /Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src/window.c */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11B1652ADD914278B29324BA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FB0B886580946A69FE293FE /* ZERO_CHECK */;
+			targetProxy = 837C0648394C4172823F0CD2 /* PBXContainerItemProxy */;
+		};
+		7B5696C7994E4915A7623E43 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F8D1D68D4D4543E48DC1F388 /* glfw */;
+			targetProxy = 227355AAD9BC490E8F1072C3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2262EC2F347847ED92199849 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		33689542738F4CB09EF23E87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		4E81DDDA519A43AC87EA94F5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		61727BAA703941ADB72E4AF5 /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Dala/Documents/bezier/bin/MinSizeRel;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,YOCTO_OPENGL);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include,/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src,/Users/Dala/Documents/bezier/libs/realtime/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -Wall  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = MinSizeRel;
+		};
+		6FE7DC4638974B9B83AE5B9F /* MinSizeRel */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/build;
+			};
+			name = MinSizeRel;
+		};
+		805FCC9693BA46689D815CCE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Dala/Documents/bezier/bin/Release;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,YOCTO_OPENGL);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include,/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src,/Users/Dala/Documents/bezier/libs/realtime/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "    -DNDEBUG -fPIC -Wall  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		851C6B7DDAE54682A1E5063C /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Dala/Documents/bezier/bin/RelWithDebInfo;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 2;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,YOCTO_OPENGL);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include,/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src,/Users/Dala/Documents/bezier/libs/realtime/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "       -DNDEBUG -fPIC -Wall  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		8605B9CAEF6040239F618509 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		A65FB36124274740904076FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Release;
+		};
+		AD2F0EB44C8745A9AFA23733 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/build;
+			};
+			name = Debug;
+		};
+		B1B796922ABB49DA97CAE049 /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ZERO_CHECK;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		C85BF0A8A7D34CE987612E1C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				CONFIGURATION_BUILD_DIR = /Users/Dala/Documents/bezier/bin/Debug;
+				EXECUTABLE_PREFIX = lib;
+				EXECUTABLE_SUFFIX = .a;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'",_GLFW_USE_CONFIG_H,YOCTO_OPENGL);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				HEADER_SEARCH_PATHS = (/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/include,/Users/Dala/Documents/bezier/libs/realtime/ext/glfw/src,/Users/Dala/Documents/bezier/libs/realtime/glfw/src);
+				INSTALL_PATH = "";
+				LIBRARY_STYLE = STATIC;
+				OTHER_CFLAGS = "   -fPIC -Wall  ";
+				OTHER_LIBTOOLFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = glfw3;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/src;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+		D7763CA87435415D80E0929A /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/build;
+			};
+			name = RelWithDebInfo;
+		};
+		D9BC40DA238B45E3A70382DA /* RelWithDebInfo */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = RelWithDebInfo;
+		};
+		F407EBC25D5A42E6920C112F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.15.sdk;
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw/build;
+			};
+			name = Release;
+		};
+		F70809F054714628BA6DDBD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_INLINES_ARE_PRIVATE_EXTERN = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = ("'CMAKE_INTDIR=\"$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)\"'");
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				INSTALL_PATH = "";
+				OTHER_LDFLAGS = " ";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = ALL_BUILD;
+				SECTORDER_FLAGS = "";
+				SYMROOT = /Users/Dala/Documents/bezier/libs/realtime/glfw;
+				USE_HEADERMAP = NO;
+				WARNING_CFLAGS = ("-Wmost","-Wno-four-char-constants","-Wno-unknown-pragmas","$(inherited)");
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2099681B0FAC4E7E9C552B68 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F70809F054714628BA6DDBD9 /* Debug */,
+				33689542738F4CB09EF23E87 /* Release */,
+				4E81DDDA519A43AC87EA94F5 /* MinSizeRel */,
+				D9BC40DA238B45E3A70382DA /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		36291B3A1C4C42EDBE0CBFF9 /* Build configuration list for PBXAggregateTarget "ZERO_CHECK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8605B9CAEF6040239F618509 /* Debug */,
+				A65FB36124274740904076FF /* Release */,
+				2262EC2F347847ED92199849 /* MinSizeRel */,
+				B1B796922ABB49DA97CAE049 /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E351DBD52C994395885789B4 /* Build configuration list for PBXNativeTarget "glfw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C85BF0A8A7D34CE987612E1C /* Debug */,
+				805FCC9693BA46689D815CCE /* Release */,
+				61727BAA703941ADB72E4AF5 /* MinSizeRel */,
+				851C6B7DDAE54682A1E5063C /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		FA7A0C6E17A84E169AB2CBFE /* Build configuration list for PBXProject "GLFW" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD2F0EB44C8745A9AFA23733 /* Debug */,
+				F407EBC25D5A42E6920C112F /* Release */,
+				6FE7DC4638974B9B83AE5B9F /* MinSizeRel */,
+				D7763CA87435415D80E0929A /* RelWithDebInfo */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA9CF2C0AE4142ADB72C6B9B /* Project object */;
+}
