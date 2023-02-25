@@ -66,7 +66,7 @@ struct App {
   Added_Path *polthier_straightest_shape = {};
   Added_Path *bezier_curve_shape = {};
   Added_Path *ground_truth_shape = {};
-  Added_Path *mahen_curve_shape = {};
+  Added_Path *béz_interp_curve_shape = {};
   Added_Path *bspline_curve_shape = {};
   Added_Points *source_shape = {};
   Added_Points *target_shape = {};

@@ -315,97 +315,19 @@ void draw(const gui_input &input, void *data) {
   draw_scene(app, input.framebuffer_viewport);
 
   auto widget = app.widget;
-  begin_widget(widget, "Smooth Geodesic Paths");
+  begin_widget(widget, "RCM on meshes");
 
-  if (draw_button(widget, "Print Current Endpoints")) {
-    printf("current target is: {%d,{%f,%f}}", app.control_points[0].face,
-           app.control_points[0].uv.x, app.control_points[0].uv.y);
-    printf("current source is: {%d,{%f,%f}}", app.control_points[1].face,
-           app.control_points[1].uv.x, app.control_points[1].uv.y);
-  }
-
-  if (draw_button(widget, "Show Gradient")) {
-    if (app.control_points[0].face != -1) {
-
-      if (app.control_points.size() > app.selected_weights) {
-        app.field =
-            exact_geodesic_distance(mesh->triangles, mesh->positions,
-                                    app.control_points[app.selected_weights]);
-
-        std::transform(app.field.begin(), app.field.end(), app.field.begin(),
-                       [](float lambda) { return lambda * lambda; });
-        auto F = wrapper(app.field);
-        app.vector_field = AGS_grad(op->Grad, F);
-
-        if (app.vector_field_shape == nullptr)
-          app.vector_field_shape =
-              add_vector_field_shape(app, app.vector_field, app.vector_size,
-                                     app.vector_thickness, {0, 0, 1});
-        else
-          update_vector_field_shape(app.vector_field_shape->instance->shape,
-                                    *mesh, app.vector_field, app.vector_size,
-                                    app.vector_thickness, {0, 0, 1});
-      }
-
-      // app.vector_field = AGS_grad(app.operators.AGS_Grad, F,
-      //                             app.mesh.positions.size());
-      // app.vector_field = PCE_grad(app.operators.PCE_Grad, F,
-      //                             app.mesh.triangles.size());
-      // app.vector_field_shape =
-      // add_vector_field_shape(app, app.vector_field, app.vector_size,
-      //                        app.vector_thickness, {0, 0, 1});
-
-      // auto check = PCE_grad(app.operators.PCE_Grad, F,
-      //                       app.mesh.triangles.size());
-      // app.vector_field2 = AGS(app.mesh, app.topology, check);
-      // auto err = flt_min;
-      // auto vert = -1;
-      // for (auto i = 0; i < app.vector_field2.size(); ++i) {
-      //   err = std::max(err, angle(app.vector_field2[i],
-      //   app.vector_field[i])); vert = i;
-      // }
-      // app.vector_field_shape2 =
-      //     add_vector_field_shape(app, app.vector_field2, app.vector_size,
-      //                            app.vector_thickness, {1, 0, 0});
-
-      // std::cout << "Maximum error is"
-      //           << " " << err << " "
-      //           << "at vert"
-      //           << " " << vert << std::endl;
-      // std::tie(app.vector_field, app.vector_field_pos,
-      //          app.vector_field_normals) =
-      //     gradient_inside_triangles(app.mesh, app.topology,
-      //     app.operators,
-      //                               app.field, 3, false, true);
-
-      // app.vector_field2.resize(app.mesh.positions.size());
-      // for (auto i = 0; i < app.mesh.positions.size(); ++i) {
-      //   app.vector_field2[i] = gradient_at_vid(app.mesh, app.topology,
-      //                                          app.operators, app.field, i);
-      // }
-      // app.vector_field_shape = add_generic_vector_field_shape(
-      //     app, app.vector_field, app.vector_field_pos,
-      //     app.vector_field_normals, app.vector_size, app.vector_thickness,
-      //     {1, 0, 0}, app.lift_factor);
-      // app.vector_field_shape2 =
-      //     add_vector_field_shape(app, app.vector_field2, app.vector_size,
-      //                            app.vector_thickness, {0, 0, 1});
-    }
-  }
-
-  draw_slider(widget, "Subdivision Steps", app.subdiv, 1, 12);
-
-  draw_separator(widget);
-  draw_bullet_text(widget, "Experiments");
+  draw_bullet_text(widget, "Distance Field");
   vector<string> solver_names = {"Exact", "Graph Based"};
   if (draw_combobox(widget, "Solver", app.type_of_solver, solver_names)) {
     for (auto i = 0; i < app.point_moved.size(); ++i) {
       app.point_moved[i] = true;
     }
   }
-
+  draw_checkbox(widget, "Re-Compute fields", app.recompute_fields);
   draw_separator(widget);
-  draw_bullet_text(widget, "Weighted Average");
+  draw_bullet_text(widget, "Parameters");
+  draw_slider(widget, "Subdivision Steps", app.subdiv, 1, 12);
 
   if (draw_combobox(widget, "Weights", app.selected_weights,
                     weigths_names(app))) {
@@ -413,9 +335,35 @@ void draw(const gui_input &input, void *data) {
       app.curr_w = app.w[app.selected_weights];
     }
   }
+  if (draw_slider(widget, "W", app.curr_w, 0.05, 5)) {
+    if (app.w.size() > app.selected_weights) {
+      app.w[app.selected_weights] = app.curr_w;
+    }
+    if (app.fields.size() > 0 && app.bezier_curve_shape != nullptr) {
+      auto pos = rational_bézier_curve(*mesh, *geometry, *op, app.dual_solver,
+                                       app.solver, app.fields, app.grads,
+                                       app.control_points, app.w, app.subdiv);
+      update_path_shape(app.bezier_curve_shape->instance->shape, app.mesh, pos,
+                        0.001);
+    }
+    if (app.fields.size() > 0 && app.béz_interp_curve_shape != nullptr) {
+      auto pos = béz_interp_rational_curve(
+          *mesh, *geometry, *op, app.solver, app.dual_solver, app.fields,
+          app.grads, app.control_points, app.w, app.subdiv);
+      update_path_shape(app.béz_interp_curve_shape->instance->shape, app.mesh,
+                        pos, 0.001);
+    }
+    if (app.fields.size() > 0 && app.bspline_curve_shape != nullptr) {
 
-  draw_checkbox(widget, "Re-Compute fields", app.recompute_fields);
-
+      std::tie(app.polyline_pos, app.polyline) = trace_rational_bspline(
+          *mesh, *geometry, *op, app.dual_solver, app.fields, app.grads,
+          app.control_points, app.w, app.subdiv);
+      update_path_shape(app.bspline_curve_shape->instance->shape, app.mesh,
+                        concatenate_curve(app.polyline_pos), 0.001);
+    }
+  }
+  draw_separator(widget);
+  draw_bullet_text(widget, "Curve Tracing");
   if (draw_button(widget, "Trace Circle")) {
     if (app.control_points.size() > 0 && app.control_points.size() > 0) {
       auto points = circle_control_points(app.mesh, app.topology,
@@ -433,19 +381,9 @@ void draw(const gui_input &input, void *data) {
       } else
         update_path_shape(app.bezier_curve_shape->instance->shape, app.mesh,
                           pos, 0.001);
-      //  add_points_shape(app, pos, 0.002, {0, 1, 0});
-      auto f = exact_geodesic_distance(app.mesh.triangles, app.mesh.positions,
-                                       app.control_points[0]);
-      auto circle = create_circle(app.mesh.triangles, app.mesh.positions,
-                                  app.topology.adjacencies,
-                                  app.control_points[0], 0.125, f);
-      add_path_shape(app,
-                     circle_positions(app.mesh.triangles, app.mesh.positions,
-                                      app.topology.adjacencies, circle),
-                     0.001, {0, 0, 1});
     }
   }
-  if (draw_button(widget, "Mahen Curve")) {
+  if (draw_button(widget, "Interpolant Bézier Curve")) {
     if (app.control_points.size() > 0 && app.control_points.size() > 2) {
 
       if (app.recompute_fields) {
@@ -461,44 +399,18 @@ void draw(const gui_input &input, void *data) {
         for (auto i = 0; i < app.point_moved.size(); ++i)
           app.point_moved[i] = false;
       }
-      auto pos = mahen_rational_curve(*mesh, *geometry, *op, app.solver,
-                                      app.dual_solver, app.fields, app.grads,
-                                      app.control_points, app.w, app.subdiv);
+      auto pos = béz_interp_rational_curve(
+          *mesh, *geometry, *op, app.solver, app.dual_solver, app.fields,
+          app.grads, app.control_points, app.w, app.subdiv);
 
-      if (app.mahen_curve_shape == nullptr)
-        app.mahen_curve_shape = add_path_shape(app, pos, 0.001, {1, 0, 0});
+      if (app.béz_interp_curve_shape == nullptr)
+        app.béz_interp_curve_shape = add_path_shape(app, pos, 0.001, {1, 0, 0});
       else
-        update_path_shape(app.mahen_curve_shape->instance->shape, *mesh, pos,
-                          0.001);
+        update_path_shape(app.béz_interp_curve_shape->instance->shape, *mesh,
+                          pos, 0.001);
     }
   }
-  if (draw_slider(widget, "W", app.curr_w, 0.05, 5)) {
-    if (app.w.size() > app.selected_weights) {
-      app.w[app.selected_weights] = app.curr_w;
-    }
-    if (app.fields.size() > 0 && app.bezier_curve_shape != nullptr) {
-      auto pos = rational_bézier_curve(*mesh, *geometry, *op, app.dual_solver,
-                                       app.solver, app.fields, app.grads,
-                                       app.control_points, app.w, app.subdiv);
-      update_path_shape(app.bezier_curve_shape->instance->shape, app.mesh, pos,
-                        0.001);
-    }
-    if (app.fields.size() > 0 && app.mahen_curve_shape != nullptr) {
-      auto pos = mahen_rational_curve(*mesh, *geometry, *op, app.solver,
-                                      app.dual_solver, app.fields, app.grads,
-                                      app.control_points, app.w, app.subdiv);
-      update_path_shape(app.mahen_curve_shape->instance->shape, app.mesh, pos,
-                        0.001);
-    }
-    if (app.fields.size() > 0 && app.bspline_curve_shape != nullptr) {
 
-      std::tie(app.polyline_pos, app.polyline) = trace_rational_bspline(
-          *mesh, *geometry, *op, app.dual_solver, app.fields, app.grads,
-          app.control_points, app.w, app.subdiv);
-      update_path_shape(app.bspline_curve_shape->instance->shape, app.mesh,
-                        concatenate_curve(app.polyline_pos), 0.001);
-    }
-  }
   if (draw_button(widget, "Rational Bézier Curve")) {
     if (app.control_points.size() > 0 && app.control_points.size() == 4) {
       auto control_points = vector<int>(app.control_points.size());
@@ -584,6 +496,8 @@ void draw(const gui_input &input, void *data) {
           app, concatenate_curve(app.polyline_pos), 0.001, {1, 0, 0});
     }
   }
+  draw_separator(widget);
+  draw_bullet_text(widget, "I/O");
   draw_textinput(widget, "Scene Name", app.models_name);
   if (draw_button(widget, "Save Landmarks")) {
 
@@ -605,57 +519,12 @@ void draw(const gui_input &input, void *data) {
     auto pos = load_curve(app);
     add_path_shape(app, pos, 0.001, {1, 0, 0});
   }
-
   draw_separator(widget);
-  draw_bullet_text(widget, "Edit Lines and Arrows");
-
-  if (draw_slider(widget, "vectors size", app.scale_factor, 0, 50)) {
-    app.vector_size = 0.001 * app.scale_factor;
-    if (app.vector_field_shape != nullptr)
-      update_vector_field_shape(app.vector_field_shape->instance->shape,
-                                app.mesh, app.vector_field, app.vector_size,
-                                app.vector_thickness, {0, 0, 1});
-
-    if (app.vector_field_shape2 != nullptr)
-      update_vector_field_shape(app.vector_field_shape2->instance->shape,
-                                app.mesh, app.vector_field2, app.vector_size,
-                                app.vector_thickness, {1, 0, 0});
-  }
-
-  if (draw_slider(widget, "vectors thickness",
-                  app.vector_thickness_scale_factor, 1, 25)) {
-    app.vector_thickness = 0.00005 * app.vector_thickness_scale_factor;
-    if (app.vector_field_shape != nullptr)
-      update_vector_field_shape(app.vector_field_shape->instance->shape,
-                                app.mesh, app.vector_field, app.vector_size,
-                                app.vector_thickness, {0, 0, 1});
-
-    if (app.vector_field_shape2 != nullptr)
-      update_vector_field_shape(app.vector_field_shape2->instance->shape,
-                                app.mesh, app.vector_field2, app.vector_size,
-                                app.vector_thickness, {1, 0, 0});
-  }
-
-  if (draw_slider(widget, "lift vector", app.lift_factor, 0, 0.05)) {
-
-    if (app.vector_field_shape != nullptr && app.lift_factor != 0) {
-      update_vector_field_shape(app.vector_field_shape->instance->shape,
-                                app.mesh, app.vector_field, app.vector_size,
-                                app.vector_thickness, {0, 0, 1});
-    }
-
-    if (app.vector_field_shape2 != nullptr && app.lift_factor != 0) {
-      update_vector_field_shape(app.vector_field_shape2->instance->shape,
-                                app.mesh, app.vector_field2, app.vector_size,
-                                app.vector_thickness, {1, 0, 0});
-    }
-  }
-
   draw_checkbox(widget, "show edges", app.show_edges);
-  // draw_coloredit(widget, "Mesh Color", app.mesh_material->color);
+  draw_coloredit(widget, "Mesh Color", app.mesh_material->color);
 
   app.shade_params.faceted = app.show_edges;
-  draw_separator(widget);
+
   if (draw_button(widget, " Reset")) {
     app.control_points.clear();
     app.control_points.clear();

@@ -59,7 +59,7 @@ vector<vec3f> rational_bézier_curve(
     const vector<vector<float>> &f, const vector<vector<vec3f>> &grds,
     const vector<mesh_point> &control_points, const vector<float> &weights,
     const int k);
-vector<vec3f> mahen_rational_curve(
+vector<vec3f> béz_interp_rational_curve(
     const shape_data &data, const shape_geometry &geometry, const shape_op &op,
     const geodesic_solver &geo_solver, const dual_geodesic_solver &solver,
     const vector<vector<float>> &f, const vector<vector<vec3f>> &grds,

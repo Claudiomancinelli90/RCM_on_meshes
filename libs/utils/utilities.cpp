@@ -1033,8 +1033,8 @@ trace_circle(const shape_data &data, const shape_geometry &geometry,
 
   return result;
 }
-vector<float> mahen_weights(const vector<float> &betas, const vector<float> &ti,
-                            const float &t) {
+vector<float> béz_interp_weights(const vector<float> &betas,
+                                 const vector<float> &ti, const float &t) {
   auto n = betas.size();
   auto w = vector<float>(n);
   auto sum = 0.f;
@@ -1054,7 +1054,7 @@ vector<float> mahen_weights(const vector<float> &betas, const vector<float> &ti,
 
   return w;
 }
-vector<vec3f> mahen_rational_curve(
+vector<vec3f> béz_interp_rational_curve(
     const shape_data &data, const shape_geometry &geometry, const shape_op &op,
     const geodesic_solver &geo_solver, const dual_geodesic_solver &solver,
     const vector<vector<float>> &f, const vector<vector<vec3f>> &grds,
@@ -1065,7 +1065,7 @@ vector<vec3f> mahen_rational_curve(
   auto seed = control_points[0];
   double step = 1 / pow(2, k);
   auto t = step;
-  vector<float> w = mahen_weights(betas, tis, t);
+  vector<float> w = béz_interp_weights(betas, tis, t);
   auto curve = vector<mesh_point>((int)pow(2, k));
   curve[0] = seed;
   auto pos = zero3f;
@@ -1085,7 +1085,7 @@ vector<vec3f> mahen_rational_curve(
     }
 
     t += step;
-    w = mahen_weights(betas, tis, t);
+    w = béz_interp_weights(betas, tis, t);
   }
   curve.push_back(control_points.back());
 
